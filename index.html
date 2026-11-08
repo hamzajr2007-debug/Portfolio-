@@ -1,0 +1,538 @@
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Portfolio de Hamza Benchekroun, étudiant en BTS SIO souhaitant intégrer l'option SISR.">
+    <title>Hamza Benchekroun | Portfolio BTS SIO</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: #0b1120;
+            color: #e2e8f0;
+            line-height: 1.7;
+        }
+
+        :root {
+            --blue: #38bdf8;
+            --dark: #111c33;
+            --card: #17243b;
+            --muted: #a8b5c9;
+        }
+
+        header {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            background: rgba(11, 17, 32, 0.95);
+            border-bottom: 1px solid #26364e;
+            padding: 18px 8%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+
+        header h2 {
+            color: var(--blue);
+            font-size: 23px;
+        }
+
+        nav {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        nav a {
+            color: #e2e8f0;
+            text-decoration: none;
+            font-size: 14px;
+            transition: 0.3s;
+        }
+
+        nav a:hover {
+            color: var(--blue);
+        }
+
+        .hero {
+            min-height: 75vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 70px 20px;
+            background: radial-gradient(circle at top, #193354, #0b1120 65%);
+        }
+
+        .hero .tag {
+            color: var(--blue);
+            border: 1px solid var(--blue);
+            padding: 6px 16px;
+            border-radius: 30px;
+            margin-bottom: 25px;
+            font-size: 14px;
+        }
+
+        .hero h1 {
+            font-size: clamp(35px, 6vw, 58px);
+            color: white;
+            margin-bottom: 15px;
+        }
+
+        .hero h1 span {
+            color: var(--blue);
+        }
+
+        .hero p {
+            color: var(--muted);
+            max-width: 650px;
+            margin-bottom: 30px;
+        }
+
+        .button {
+            display: inline-block;
+            background: var(--blue);
+            color: #08111f;
+            padding: 12px 24px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        .button:hover {
+            background: white;
+            transform: translateY(-3px);
+        }
+
+        section {
+            padding: 75px 10%;
+            scroll-margin-top: 85px;
+        }
+
+        .section-title {
+            color: var(--blue);
+            font-size: 30px;
+            margin-bottom: 30px;
+        }
+
+        .card {
+            background: var(--card);
+            border: 1px solid #293b56;
+            padding: 28px;
+            border-radius: 14px;
+            margin-bottom: 20px;
+        }
+
+        .card h3 {
+            color: var(--blue);
+            margin-bottom: 12px;
+        }
+
+        .card p {
+            color: var(--muted);
+            margin-bottom: 10px;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 20px;
+        }
+
+        .skill {
+            background: var(--card);
+            border: 1px solid #293b56;
+            padding: 22px;
+            border-radius: 12px;
+        }
+
+        .skill h3 {
+            color: var(--blue);
+            margin-bottom: 10px;
+        }
+
+        .skill p {
+            color: var(--muted);
+            font-size: 14px;
+        }
+
+        .cv-name {
+            font-size: 28px;
+            color: white;
+            margin-bottom: 5px;
+        }
+
+        .cv-subtitle {
+            color: var(--blue);
+            font-weight: bold;
+        }
+
+        .cv-section {
+            border-left: 3px solid var(--blue);
+            padding-left: 20px;
+            margin: 30px 0;
+        }
+
+        .cv-section h3 {
+            color: var(--blue);
+            margin-bottom: 12px;
+        }
+
+        ul {
+            padding-left: 22px;
+            color: var(--muted);
+        }
+
+        li {
+            margin-bottom: 7px;
+        }
+
+        .date {
+            color: var(--blue);
+            font-size: 14px;
+        }
+
+        .contact {
+            text-align: center;
+        }
+
+        footer {
+            text-align: center;
+            padding: 25px;
+            background: #080d18;
+            color: #8493aa;
+            border-top: 1px solid #26364e;
+        }
+
+        @media (max-width: 650px) {
+            header {
+                justify-content: center;
+                text-align: center;
+            }
+
+            nav {
+                justify-content: center;
+                gap: 12px;
+            }
+
+            section {
+                padding: 55px 7%;
+            }
+
+            .hero {
+                min-height: 65vh;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+    <h2>Hamza.dev</h2>
+
+    <nav>
+        <a href="#accueil">Accueil</a>
+        <a href="#presentation">Présentation</a>
+        <a href="#projet">Projet professionnel</a>
+        <a href="#competences">Compétences</a>
+        <a href="#realisations">Réalisations</a>
+        <a href="#cv">Mon CV</a>
+        <a href="#contact">Contact</a>
+    </nav>
+</header>
+
+<main>
+
+   
+    <section class="hero" id="accueil">
+        <div class="tag">Portfolio BTS SIO</div>
+
+        <h1>Bonjour, je suis <span>Hamza</span></h1>
+
+        <p>
+            Étudiant en BTS Services Informatiques aux Organisations,
+            je souhaite intégrer l'option SISR et développer mes
+            compétences dans les systèmes, les réseaux et la cybersécurité.
+        </p>
+
+        <a href="#presentation" class="button">Découvrir mon portfolio</a>
+    </section>
+
+    
+    <section id="presentation">
+        <h2 class="section-title">Qui suis-je ?</h2>
+
+        <div class="card">
+            <h3>Ma présentation</h3>
+
+            <p>
+                Je m'appelle Hamza Benchekroun et je suis étudiant
+                en BTS SIO au Campus Charles de Foucauld à Paris.
+            </p>
+
+            <p>
+                Passionné d'informatique, je m'intéresse particulièrement
+                au matériel, aux systèmes informatiques, aux réseaux
+                et à la personnalisation logicielle.
+            </p>
+
+            <p>
+                À travers ce portfolio, je souhaite présenter mon parcours,
+                mes compétences, mes projets et mon évolution au cours
+                de ma formation.
+            </p>
+        </div>
+    </section>
+
+    
+    <section id="projet">
+        <h2 class="section-title">Mon projet professionnel</h2>
+
+        <div class="card">
+            <h3>Mon objectif : intégrer l'option SISR</h3>
+
+            <p>
+                Je souhaite intégrer l'option SISR
+                (Solutions d'Infrastructure, Systèmes et Réseaux)
+                du BTS SIO.
+            </p>
+
+            <p>
+                Mon objectif est d'acquérir les connaissances nécessaires
+                pour installer, configurer, administrer et sécuriser
+                des infrastructures informatiques.
+            </p>
+
+            <p>
+                Je souhaite ensuite évoluer vers un métier dans
+                l'administration des systèmes et réseaux ou le support
+                informatique.
+            </p>
+        </div>
+    </section>
+
+    
+    <section id="competences">
+        <h2 class="section-title">Mes compétences</h2>
+
+        <div class="grid">
+
+            <div class="skill">
+                <h3>Systèmes</h3>
+                <p>Windows 10, Windows 11, premières notions de Windows Server et Linux.</p>
+            </div>
+
+            <div class="skill">
+                <h3>Réseaux</h3>
+                <p>Connaissances de base du protocole TCP/IP.</p>
+            </div>
+
+            <div class="skill">
+                <h3>Programmation</h3>
+                <p>HTML, CSS et Python.</p>
+            </div>
+
+            <div class="skill">
+                <h3>Matériel</h3>
+                <p>Assemblage de PC, installation de systèmes et diagnostic de problèmes.</p>
+            </div>
+
+            <div class="skill">
+                <h3>Bureautique</h3>
+                <p>Utilisation de la suite Microsoft Office.</p>
+            </div>
+
+            <div class="skill">
+                <h3>Logiciels</h3>
+                <p>Installation, configuration et personnalisation de logiciels Homebrew.</p>
+            </div>
+
+        </div>
+    </section>
+
+   
+    <section id="realisations">
+        <h2 class="section-title">Mes projets et réalisations</h2>
+
+        <div class="card">
+            <h3>Montage et configuration de PC</h3>
+            <p>
+                Choix des composants, assemblage d'un ordinateur,
+                installation de Windows 11 et diagnostic d'un problème
+                de démarrage.
+            </p>
+        </div>
+
+        <div class="card">
+            <h3>Modding de consoles</h3>
+            <p>
+                Modification de consoles Nintendo 3DS, Wii U et Switch.
+                Installation de logiciels Homebrew et personnalisation
+                des interfaces.
+            </p>
+        </div>
+
+        <div class="card">
+            <h3>Customisation logicielle</h3>
+            <p>
+                Installation et configuration de logiciels Homebrew
+                et personnalisation des environnements logiciels.
+            </p>
+        </div>
+    </section>
+
+    
+    <section id="cv">
+        <h2 class="section-title">Mon CV</h2>
+
+        <div class="card">
+
+            <h2 class="cv-name">Hamza BENCHEKROUN</h2>
+            <p class="cv-subtitle">
+                Étudiant en BTS Services Informatiques aux Organisations
+            </p>
+            <p>Paris, France</p>
+
+            <p>
+                <strong>Recherche d'un stage de 5 semaines :</strong>
+                du 3 mai au 4 juin 2027.
+            </p>
+
+            <div class="cv-section">
+                <h3>Profil</h3>
+                <p>
+                    Passionné par l'architecture informatique,
+                    je monte mes propres PC, conçois des systèmes
+                    robotisés et pratique le modding de consoles.
+                    Titulaire d'un baccalauréat scientifique avec
+                    spécialité NSI, je suis actuellement étudiant
+                    en BTS SIO au Campus Charles de Foucauld.
+                </p>
+                <p>
+                    Je recherche un stage afin de participer au support
+                    informatique, à la maintenance et à la gestion
+                    d'un parc informatique.
+                </p>
+            </div>
+
+            <div class="cv-section">
+                <h3>Formations</h3>
+
+                <p><strong>BTS Services Informatiques aux Organisations</strong></p>
+                <p class="date">2026 – En cours</p>
+                <p>Campus Charles de Foucauld – Paris, France</p>
+
+                <ul>
+                    <li>Gestion de projet informatique</li>
+                    <li>Administration des réseaux et des systèmes</li>
+                    <li>Développement d'applications</li>
+                </ul>
+
+                <br>
+
+                <p><strong>Baccalauréat scientifique – Mathématiques et NSI</strong></p>
+                <p class="date">2025</p>
+                <p>Lycée GSR – Casablanca, Maroc</p>
+            </div>
+
+            <div class="cv-section">
+                <h3>Projets personnels</h3>
+
+                <p><strong>Montage de PC</strong></p>
+                <ul>
+                    <li>Choix des composants selon un budget défini</li>
+                    <li>Assemblage d'un ordinateur</li>
+                    <li>Installation de Windows 11</li>
+                    <li>Diagnostic d'un problème de démarrage</li>
+                </ul>
+
+                <br>
+
+                <p><strong>Modding de consoles</strong></p>
+                <ul>
+                    <li>Modification de Nintendo 3DS, Wii U et Switch</li>
+                    <li>Installation de logiciels Homebrew</li>
+                    <li>Personnalisation des interfaces</li>
+                </ul>
+            </div>
+
+            <div class="cv-section">
+                <h3>Expérience professionnelle</h3>
+
+                <p><strong>Stage d'observation – Nestlé</strong></p>
+                <p>Casablanca, Maroc</p>
+                <p class="date">2022 – Durée : 1 semaine</p>
+
+                <ul>
+                    <li>Découverte du rôle du réseau local dans l'entreprise.</li>
+                    <li>Observation de la chaîne de production.</li>
+                    <li>Découverte des services qualité, logistique et maintenance.</li>
+                </ul>
+            </div>
+
+            <div class="cv-section">
+                <h3>Compétences techniques</h3>
+                <ul>
+                    <li>Systèmes : Windows 10 / 11, notions de Windows Server et Linux.</li>
+                    <li>Réseaux : bases du protocole TCP/IP.</li>
+                    <li>Bureautique : Microsoft Office.</li>
+                    <li>Programmation : HTML, CSS et Python.</li>
+                </ul>
+            </div>
+
+            <div class="cv-section">
+                <h3>Qualités professionnelles</h3>
+                <ul>
+                    <li>Sens du service et écoute</li>
+                    <li>Esprit d'analyse et diagnostic</li>
+                    <li>Autonomie et curiosité technique</li>
+                    <li>Rigueur et méthode</li>
+                    <li>Esprit d'équipe</li>
+                </ul>
+            </div>
+
+            <div class="cv-section">
+                <h3>Langues</h3>
+                <ul>
+                    <li>Arabe : langue maternelle</li>
+                    <li>Anglais : B2</li>
+                    <li>Espagnol : A2</li>
+                </ul>
+            </div>
+
+            <div class="cv-section">
+                <h3>Centres d'intérêt</h3>
+                <ul>
+                    <li>Modding de consoles de jeu</li>
+                    <li>Customisation logicielle</li>
+                    <li>Bandes dessinées : Spider-Man, Batman et X-Men</li>
+                </ul>
+            </div>
+            </a>
+
+        </div>
+    </section>
+
+</main>
+
+<footer>
+    <p>© 2026 Hamza Benchekroun – Portfolio BTS SIO</p>
+    <p>Site réalisé en HTML et CSS avec GitHub Pages.</p>
+</footer>
+
+</body>
+</html>
